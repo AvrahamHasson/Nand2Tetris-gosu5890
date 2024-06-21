@@ -28,4 +28,12 @@ class VMdirec extends FileOrDirec {
     return vm_content
   }
 
+  public function vmFiles():ArrayList<String>{
+    var vmFiles = new ArrayList<String>()
+    for (fname in handle.list())
+      if(fname.endsWith(".vm"))
+        vmFiles.add(fname.toString())
+    return vmFiles
+  }
+
 }
